@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários Cadastrados</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+
+</head>
+<body>
+    <div class="bloco_branco" style="width:80%; margin:auto; margin-top:40px;">
+        <h1>Usuários Cadastrados</h1>
+        <!-- Chat GPT ajudou bastante em fazer essa tabela-->
+        <table border="1" width="100%" cellpadding="8" cellspacing="0">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Curso</th>
+                <th>Cargo</th>
+                <th>Ações</th>
+            </tr>
+            {% for u in usuarios %}
+            <tr>
+                <td>{{ u.id }}</td>
+                <td>{{ u.nome }}</td>
+                <td>{{ u.email }}</td>
+                <td>{{ u.curso }}</td>
+                <td>{{ u.cargo }}</td>
+                <td>
+                    <!-- O ID PRO UPDATE VEM DAQUI-->
+                    <a href="/editar/{{ u.id }}">Editar</a> |
+                    <a href="/excluir/{{ u.id }}" onclick="return confirm('Excluir este usuário?')">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <p style="text-align:center; margin-top:20px;">
+            <a href="/">← Voltar ao Registro</a>
+        </p>
+    </div>
+</body>
+</html>

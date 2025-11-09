@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #d8b4f8, #b3c7f9, #f7d9f8, #b6e3f9);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  font-family:'Nunito',sans-serif
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+form.bloco_branco{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+    width: 10cm;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.822);
+
+}
+.titulo{
+    text-align: center;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #B2B5E0;}
+
+.bloco_branco select, input{
+    width: 90%;
+    padding: 10px;
+    margin: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: rgba(128, 128, 128, 0.164);
+
+}
+
+.bloco_branco button{
+    display: flex;
+    flex-direction:row;
+    padding: 10px;
+    margin: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    background-color: rgba(2, 155, 10, 0.562);
+    cursor: pointer;
+
+}
+.botoes{
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    gap: -2px;
+}
+
+#divisoria{
+    text-align: center;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    background-color: #B2B5E0;
+}
+
+.cargo {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 30px; 
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cargo label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  margin: 15px ;
+}

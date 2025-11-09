@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font: normal 20px arial
+            ;
+        }
+        div#corpo{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        div#subtitulo{
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        div#opcoes{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+        }
+        div#res{
+            margin-top: 20px;
+            text-align: center;
+        }
+        label{
+            cursor: pointer;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id = "corpo">
+        <h1>Teste de nacionalidade</h1>
+        <div>
+            <div id="subtitulo">
+                <h2>Nacionalidade: <br> </h2>
+            </div>
+            
+            <div id="opcoes">
+                <label for="brasil" >
+                    Brasileira:<input type="radio" value="Brasileiro" name="naci" id="brasil">
+                </label>
+
+                <label for="estrangeiro">
+                    Estrangeiro: <input type="radio" value="Estrangeiro" name="naci" id="estrangeiro">
+                </label>
+                <input type="button" value="Enviar" onclick="verificar()">
+                <div id="res">
+                    ?
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+    
+    function verificar(){
+
+        let selecionado = window.document.body.querySelector('input[name="naci"]:checked')
+        let res = window.document.body.querySelector("div#res")
+
+        if (selecionado){
+            document.getElementById("res").innerText = `Você escolheu: ${selecionado.value}`
+        }
+        else{
+                document.getElementById("res").innerText ="Por favor, selecione uma opção.";
+        }
+    }
+
+        
+        
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuário</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+    <div id="container">
+        <form class="bloco_branco" method="POST">
+            <div class="titulo">
+                <h1>Editar Usuário</h1>
+            </div>
+
+            <input type="text" name="nome" value="{{ usuario.nome }}" required>
+            <input type="email" name="email" value="{{ usuario.email }}" required>
+
+            <label>
+                <select name="curso" required>
+                    <!-- Verifica se qual valor está inserido la no banco de dados-->
+                    <option value="CC" {% if usuario.curso == 'CC' %}selected{% endif %}>Ciência da Computação</option>
+                    <option value="DT" {% if usuario.curso == 'DT' %}selected{% endif %}>Direito</option>
+                    <option value="ADM" {% if usuario.curso == 'ADM' %}selected{% endif %}>Administração</option>
+                </select>
+            </label>
+
+            <div id="divisoria"><h2>Cargo:</h2></div>
+            <div class="cargo">
+                <label>
+                    Usuário
+                    <input type="radio" name="cargo" value="usuario" {% if usuario.cargo == 'usuario' %}checked{% endif %}>
+                </label>
+                <label>
+                    Professor
+                    <input type="radio" name="cargo" value="professor" {% if usuario.cargo == 'professor' %}checked{% endif %}>
+                </label>
+            </div>
+
+            <button type="submit">Salvar Alterações</button>
+            <p style="text-align:center; margin-top:10px;">
+                <a href="/listar">← Voltar</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+
+
+</head>
+
+<body>
+    <div id="container">
+        <form class="bloco_branco" method="POST" action="/registrar">
+            <div class="titulo">
+                <h1>Criar Perfil</h1>
+            </div>
+
+            <!-- Campo Nome -->
+            <input type="text" name="login" id="login" placeholder="Nome completo" required>
+
+            <!-- Campo Email -->
+            <input type="email" name="email" id="email" placeholder="E-mail" required>
+
+
+            <!-- Campo Curso -->
+            <label>
+                <select name="curso" id="curso" required>
+                    <option value="">---Selecione um Curso---</option>
+                    <option value="CC">Ciência da Computação</option>
+                    <option value="DT">Direito</option>
+                    <option value="ADM">Administração</option>
+                </select>
+            </label>
+
+            <!-- Cargos dos usurios -->
+            <div id="divisoria"><h2>Cargo:</h2></div>
+            <div class="cargo">
+                <label>
+                    Usuário
+                    <input type="radio" name="cargo" value="usuario" required>
+                </label>
+                <label>
+                    Professor
+                    <input type="radio" name="cargo" value="professor" required>
+                </label>
+            </div>
+
+            <!-- Botão -->
+            <button type="submit">Criar Conta</button>
+
+            <!-- Link para listagem -->
+            <p style="text-align:center; margin-top:10px;">
+                <a href="/listar">Ver usuários cadastrados</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>
