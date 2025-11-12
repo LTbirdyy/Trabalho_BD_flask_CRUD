@@ -85,9 +85,7 @@ python app.py
 
 ---
 
-## 👨‍💻 Autor
 
-**Gabriel Rosa**
 📘 Projeto acadêmico — CRUD completo com Flask e MySQL.
 
 ---
